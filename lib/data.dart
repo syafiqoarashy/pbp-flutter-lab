@@ -59,7 +59,7 @@ class _MyDataPageState extends State<MyDataPage> {
           ],
         ),
       ),
-      body: Center(
+      body: Container(
         child: SingleChildScrollView(
           child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
