@@ -2,7 +2,8 @@
 
 ## Stateless Widget vs Stateful Widget
 
-Stateless Widgets are Widgets that state will not change/be altered once they are built. While Stateful Widgets are widgets that can change their descriptions dynamically during their lifetimes.
+Stateless Widgets are Widgets that state will not change/be altered once they are built. They do not change by themselves through some internal action or behavior. Stateless widgets only have final properties defined during its constructions.
+While Stateful Widgets are widgets whose state can be altered once they are built. The state can change multiple times in their lifetime. Classes that inherit “Stateful Widget” are immutable, but they are paired with a State class that represents the current state of the widget.
 
 #### Difference of Stateless and Stateful
 
