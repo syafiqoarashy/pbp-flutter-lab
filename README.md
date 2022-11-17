@@ -89,11 +89,17 @@ ListTile: Is a single fixed-height row that is usually filled with some text alo
 ## Name the Types of Events that exist in Flutter
 
 Some events in flutter includes:
+
 OnChanged: Called whe the user initiates a change (insert/delete text)
+
 onPressed: Called when the user taps the chip usually for buttons
+
 onTap: Same as onPressed but is also used wth other widgets.
+
 onSaved: Called when the form is saved.
+
 onHover: Is triggered when a pointer moves into the position of the widget but is not pressed.
+
 These are a few of the events that exists in Flutter. There are ofcourse many more events in Flutter.
 
 ## Explain how the Navigator Works
