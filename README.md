@@ -70,21 +70,21 @@ In any application, navigating through different pages is essential and defines 
 
 ## List all the Widgets Used
 
-AppBar: an AppBar usually consists of a toolbar and potentially other widgets, also it is usually placed as a fixed-height widget at the top of the screen. In this instance, we use it to store the title and the drawer widget.
-Drawer: Drawers are panel that slides horizontally from the edge of a Scaffold. In this project, we used it to store routings to other pages.
-Scaffold: It implements the basil Material Design visual layout structure.
-ListView: The most commonly used scrolling widget. Usually displays its children one after another in the scroll direction.
-SingleChildScrollView: A box in which a single widget can be scrolled. Makes sure that if the contents exceed the screen size (in thie example, the data on the budget data page) it is scrollable.
-Text: Same as its name, the text widget displays a string of text that can be styled accordingly.
-Padding: Pretty straightforward, this widget is usually used to shrink the constraint and causing the child to layout at a smaller size. Creating empty space around the child.
-Center: This widget will center all its child within itself.
-Row: This widget will display its children in a horizontal array.
-Column: This widget will display its children in a vertical array.
-Container: The container widget is used to "contain" more widgets/child inside it. It'll surround the child with padding and applies further constraints  to the padded extent. Surrounding the container are empty spaces(margin).
-FloatingActionButton: Just like its name, it is a circular button used as a primary action in an application which hovers over the apps content.
-Card: A panel with slightly rounded corners and elevated shadow.
-Form: Usually a widget used to group together multiple form field widgets.
-ListTile: Is a single fixed-height row that is usually filled with some text alongside leading/trailing icon.
+1. AppBar: an AppBar usually consists of a toolbar and potentially other widgets, also it is usually placed as a fixed-height widget at the top of the screen. In this instance, we use it to store the title and the drawer widget.
+2. Drawer: Drawers are panel that slides horizontally from the edge of a Scaffold. In this project, we used it to store routings to other pages.
+3. Scaffold: It implements the basil Material Design visual layout structure.
+4. ListView: The most commonly used scrolling widget. Usually displays its children one after another in the scroll direction.
+5. SingleChildScrollView: A box in which a single widget can be scrolled. Makes sure that if the contents exceed the screen size (in thie example, the data on the budget data page) it is scrollable.
+6. Text: Same as its name, the text widget displays a string of text that can be styled accordingly.
+7. Padding: Pretty straightforward, this widget is usually used to shrink the constraint and causing the child to layout at a smaller size. Creating empty space around the child.
+8. Center: This widget will center all its child within itself.
+9. Row: This widget will display its children in a horizontal array.
+10. Column: This widget will display its children in a vertical array.
+11. Container: The container widget is used to "contain" more widgets/child inside it. It'll surround the child with padding and applies further constraints  to the padded extent. Surrounding the container are empty spaces(margin).
+12. FloatingActionButton: Just like its name, it is a circular button used as a primary action in an application which hovers over the apps content.
+13. Card: A panel with slightly rounded corners and elevated shadow.
+14. Form: Usually a widget used to group together multiple form field widgets.
+15. ListTile: Is a single fixed-height row that is usually filled with some text alongside leading/trailing icon.
 
 ## Name the Types of Events that exist in Flutter
 
