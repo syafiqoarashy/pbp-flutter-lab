@@ -95,7 +95,6 @@ class _MyFormPageState extends State<MyFormPage> {
                       children: <Widget>[
                         Center(child: const Text('Data successfully stored')),
                         SizedBox(height: 20),
-                        // TODO: Display the information obtained from the form
                         TextButton(
                           onPressed: () {
                             Navigator.pushReplacement(
