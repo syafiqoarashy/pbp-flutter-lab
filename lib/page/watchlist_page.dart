@@ -126,11 +126,16 @@ class _MyWatchListState extends State<MyWatchListPage> {
                             decoration: BoxDecoration(
                                 color: Colors.white,
                                 borderRadius: BorderRadius.circular(15.0),
-                                boxShadow: const [
+                                border: Border.all(
+                                  color: snapshot.data![index].watched ? Colors.green:Colors.yellow ,
+                                  width: 3,
+                                ),
+                                boxShadow: [
                                   BoxShadow(
-                                      color: Colors.black, blurRadius: 2.0)
+                                      color: snapshot.data![index].watched ? Colors.green:Colors.yellow, blurRadius: 2.0)
                                 ]),
                             child: ListTile(
+
                               title: Column(
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -144,6 +149,16 @@ class _MyWatchListState extends State<MyWatchListPage> {
                                   ),
                                 ],
                               ),
+                                leading: Checkbox(
+                                  checkColor: Colors.white,
+                                  value: snapshot.data![index].watched,
+                                  onChanged: (bool? value) {
+                                    setState(() {
+                                      snapshot.data![index].watched =
+                                      !snapshot.data![index].watched;
+                                    });
+                                  },
+                                ),
                                 onTap: () {
                                   Navigator.push(
                                       context,
