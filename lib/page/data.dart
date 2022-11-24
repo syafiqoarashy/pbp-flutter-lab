@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:counter_7/main.dart';
-import 'package:counter_7/form.dart';
+import 'package:counter_7/page/form.dart';
+import 'package:counter_7/page/watchlist_page.dart';
 
 class MyDataPage extends StatefulWidget {
   const MyDataPage({super.key});
@@ -55,43 +56,53 @@ class _MyDataPageState extends State<MyDataPage> {
                 );
               },
             ),
+            ListTile(
+              title: const Text('My Watch List'),
+              onTap: () {
+                // Routing the menu to the form page
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => const MyWatchListPage()),
+                );
+              },
+            ),
           ],
         ),
       ),
       body: Container(
         child: SingleChildScrollView(
           child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: <Widget>[
-            for (var i in BudgetData.storedData)
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Card(
-                    child: Column(
-                  children: [
-                    ListTile(
-                        title: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(i[0], style: TextStyle(fontSize: 20)),
-                        Text(i[3].toString().substring(0,10),
-                            style: TextStyle(fontSize: 12)),
-                      ],
-                    )),
-                    ListTile(
-                        title: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text('${i[1].toString()}\$',
-                            style: TextStyle(fontSize: 14)),
-                        Text('${i[2]}', style: TextStyle(fontSize: 14)),
-                      ],
-                    )),
-                  ],
-                )),
-              )
-          ],
-        ),
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: <Widget>[
+              for (var i in BudgetData.storedData)
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Card(
+                      child: Column(
+                    children: [
+                      ListTile(
+                          title: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(i[0], style: TextStyle(fontSize: 20)),
+                          Text(i[3].toString().substring(0, 10),
+                              style: TextStyle(fontSize: 12)),
+                        ],
+                      )),
+                      ListTile(
+                          title: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text('${i[1].toString()}\$',
+                              style: TextStyle(fontSize: 14)),
+                          Text('${i[2]}', style: TextStyle(fontSize: 14)),
+                        ],
+                      )),
+                    ],
+                  )),
+                )
+            ],
+          ),
         ),
       ),
     );
