@@ -405,3 +405,8 @@ Create a stateful widget for the page, then retrieve the data from our URL that 
 
 <img width="574" alt="Screen Shot 2022-11-24 at 11 11 21 AM" src="https://user-images.githubusercontent.com/101589777/203692539-1505c68d-52fd-483b-b0c2-75f3097873d0.png">
 
+11. Bonus Implementation, use the checkbox widget and add a border as a decoration. The color will change depending on the boolean value of the watched data. The checkbox will change the value of the boolean into the opposite.
+
+<img width="338" alt="Screen Shot 2022-11-24 at 11 36 25 AM" src="https://user-images.githubusercontent.com/101589777/203695270-4b868be3-2b77-4fef-9229-da8352c1634b.png">
+
+<img width="892" alt="Screen Shot 2022-11-24 at 11 36 47 AM" src="https://user-images.githubusercontent.com/101589777/203695301-e4ba3169-ca3a-4633-84ea-9836a6e1a355.png">
