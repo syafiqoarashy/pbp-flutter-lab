@@ -72,7 +72,7 @@ In any application, navigating through different pages is essential and defines 
 
 1. AppBar: an AppBar usually consists of a toolbar and potentially other widgets, also it is usually placed as a fixed-height widget at the top of the screen. In this instance, we use it to store the title and the drawer widget.
 2. Drawer: Drawers are panel that slides horizontally from the edge of a Scaffold. In this project, we used it to store routings to other pages.
-3. Scaffold: It implements the basil Material Design visual layout structure.
+3. Scaffold: It implements the basic Material Design visual layout structure.
 4. ListView: The most commonly used scrolling widget. Usually displays its children one after another in the scroll direction.
 5. SingleChildScrollView: A box in which a single widget can be scrolled. Makes sure that if the contents exceed the screen size (in thie example, the data on the budget data page) it is scrollable.
 6. Text: Same as its name, the text widget displays a string of text that can be styled accordingly.
@@ -334,4 +334,74 @@ A screenshot won't fit so i'll put the code here.
 5. Make the data page so that It'll display information based on the submitted data from the form page.
 
 <img width="508" alt="Screen Shot 2022-11-17 at 10 13 00 AM" src="https://user-images.githubusercontent.com/101589777/202345830-b293346f-716b-4ea1-b88a-cf67d026efc5.png">
+
+# ASSIGNMENT 9
+## JSON Data
+Yes it is possible to retrieve JSON data without creating a model first. How? Flutter has a built-in dart:convert library that includes a straightforward JSON encoder and decoder. You can use the jsonDecode() function where we pass the raw JSON string and then looking up the values you need in the resulting Map<String, dynamic>. Is it better than creating a model before retrieving JSON data? It depends. If we have a smaller project and have minimal models, it maybe the better option.
+
+## List all the Widgets Used
+1. AppBar: an AppBar usually consists of a toolbar and potentially other widgets, also it is usually placed as a fixed-height widget at the top of the screen. In this instance, we use it to store the title and the drawer widget.
+2. Drawer: Drawers are panel that slides horizontally from the edge of a Scaffold. In this project, we used it to store routings to other pages.
+3. Scaffold: It implements the basic Material Design visual layout structure.
+4. Row: This widget will display its children in a horizontal array.
+5. Column: This widget will display its children in a vertical array.
+6. FloatingActionButton: Just like its name, it is a circular button used as a primary action in an application which hovers over the apps content.
+7. Padding: Pretty straightforward, this widget is usually used to shrink the constraint and causing the child to layout at a smaller size. Creating empty space around the child.
+8. Text: Same as its name, the text widget displays a string of text that can be styled accordingly.
+9. ElevatedButton: An elevated button is a label child displayed on a Material widget whose Material.elevation increases when the button is pressed.
+10. FutureBuilder: Widget that builds itself based on the latest snapshot of interaction with a Future.
+
+## Mechanism of Data Retrieval
+Create the model that adapts to JSON data, use the website Quicktype to achieve this. Afterwards, put the code inside a dart file containing the model. We also have to add the http package to perform an HTTP request. Don't forget also to add 
+```<uses-permission android:name="android.permission.INTERNET" />```
+inside android/app/src/main/AndroidManifest.xml. Then create the dart file for the page, in that page, import the necessary imports.
+```
+import 'package:http/http.dart' as http;
+import 'dart:convert';
+import 'package:<APP_NAME>/model/to_do.dart';
+```
+Create a stateful widget for the page, then retrieve the data from our URL that contains our JSON using the http.get method. The JSON data is then serialized. Lastly, to display the data, use FutureBuilder.
+
+## Implementation
+1. Create a new dart file for the page and for the model
+
+<img width="206" alt="Screen Shot 2022-11-24 at 10 57 57 AM" src="https://user-images.githubusercontent.com/101589777/203690798-88ffdecb-8b27-4850-ba01-3f3905e74773.png">
+
+<img width="201" alt="Screen Shot 2022-11-24 at 10 58 48 AM" src="https://user-images.githubusercontent.com/101589777/203690907-8d7ad5ac-556f-4294-a057-9697e239abde.png">
+
+2. Create the custom models using Quicktype
+
+<img width="1440" alt="Screen Shot 2022-11-24 at 10 59 45 AM" src="https://user-images.githubusercontent.com/101589777/203691034-35d5503c-bd68-40e8-b730-bf260ab39270.png">
+
+3. Copy the custom model into the dart file for the model
+
+<img width="1001" alt="Screen Shot 2022-11-24 at 11 01 08 AM" src="https://user-images.githubusercontent.com/101589777/203691198-bbf1e045-9b91-49f3-89b3-ba48a609e302.png">
+
+4. Add the drawer so that it can navigate to other pages
+
+<img width="783" alt="Screen Shot 2022-11-24 at 11 03 51 AM" src="https://user-images.githubusercontent.com/101589777/203691554-ac99c041-4377-462d-9b45-375c071348fe.png">
+
+5. Use FutureBuilder to display the data
+
+<img width="662" alt="Screen Shot 2022-11-24 at 11 04 48 AM" src="https://user-images.githubusercontent.com/101589777/203691665-4b4d5c64-0389-4ea4-bb40-93dee9dee748.png">
+
+6. Use ListView.builder for the data representation, inside use the ListTile Widget, if tapped it will navigate into the details page.
+
+<img width="886" alt="Screen Shot 2022-11-24 at 11 06 19 AM" src="https://user-images.githubusercontent.com/101589777/203691857-dce2f8ba-3bf1-4f04-b3c9-f3c4c9c60340.png">
+
+7. Create the dart file for the details page
+
+<img width="136" alt="Screen Shot 2022-11-24 at 11 07 00 AM" src="https://user-images.githubusercontent.com/101589777/203691952-37cdb2ef-3627-43ad-9307-57a063549ea4.png">
+
+8. Create a Stateful Widget inside the details page that has the passed values
+
+<img width="482" alt="Screen Shot 2022-11-24 at 11 08 53 AM" src="https://user-images.githubusercontent.com/101589777/203692175-6c466094-b574-4754-807b-2c8fcf2d65a8.png">
+
+9. Create a column widget that will contain the data as its children
+
+<img width="659" alt="Screen Shot 2022-11-24 at 11 09 48 AM" src="https://user-images.githubusercontent.com/101589777/203692307-819115ce-143f-4dcb-9e94-4ad8226a5f05.png">
+
+10. Create a floating action button that will go back to the watchlist page if it is pressed
+
+<img width="574" alt="Screen Shot 2022-11-24 at 11 11 21 AM" src="https://user-images.githubusercontent.com/101589777/203692539-1505c68d-52fd-483b-b0c2-75f3097873d0.png">
 
